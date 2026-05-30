@@ -8,7 +8,7 @@ Building strong technical foundations with hands-on practical skills.
 
 ### Phase 1 — Theory foundations (in progress)
 - [x] Intro to Offensive Security ✅
-- [ ] Networking fundamentals
+- [X] Networking fundamentals
 - [ ] How the internet works
 - [ ] Linux fundamentals
 - [ ] Windows fundamentals
