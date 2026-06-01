@@ -86,7 +86,57 @@ Attackers always scan before exploiting, defenders scan to monitor patterns.
 
  This command traces the path a packet takes from source to destination using packets with incremental TTL value.
  Hop 1 - VirtualBox NAT gateway responded.
- Hop 2 to 30 - All blocked as traceroute packets get absorbed in a VirtualBox environment before it even reaches the real hops
+ Hop 2 to 30 - All blocked as traceroute packets get absorbed in a VirtualBox environment before it even reaches the real hops.
+
+ Security relevance:
+ Attackers use traceroute to map network topology during reconnaisance.
+ Organisations generally block ICMP responses to prevent infrastructure mapping.
+ TCP traceroute uses TCP SYN on port 80, which is harder to block than ICMP.
+
+ #wireshark
+ 
+ <img width="2873" height="1709" alt="image" src="https://github.com/user-attachments/assets/ef04e6d3-e0af-48c7-a03b-e5eba9cce33c" />
+ 
+ This command is used to start a wireshark packet capture on a particular network interface.
+ The top section displays all packets.
+ The middle section displays packet information.
+ The bottom section displays hex values of the packets.
+
+ <img width="1447" height="665" alt="image" src="https://github.com/user-attachments/assets/855fcf10-905a-4e9c-8982-eec582e6418d" />
+
+ Source, destination and all packet details are broken down in this window. This is the work of the OSI model.
+
+ <img width="2871" height="1695" alt="image" src="https://github.com/user-attachments/assets/25a40b87-0ec3-478b-92bb-76e70e179513" />
+
+ On filtering for HTTP, we can find the HTTP get request sent, when I searched for http://example.com, and other HTTP packet is the response to the GET request.
+ On expanding the packet details, all the data can be read regarding users, cookies etc as everything is unencrypted on HTTP.
+
+ <img width="2878" height="1713" alt="image" src="https://github.com/user-attachments/assets/0f135120-bb31-4dc3-aa14-64bc53b7098e" />
+
+On filtering for tls, all the details starting from the client hello has been displayed.
+
+<img width="1437" height="652" alt="image" src="https://github.com/user-attachments/assets/cd3f4eb1-9e2d-4e29-a5f6-d8a635218f76" />
+
+Packet 15 - Client initiates TLS.
+Packet 18 - Server responds and agrees on TLS encryption settings, sends certificate.
+Packet 20 - Client confirms cipher suite, begins encryption.
+Packets 22-25 - All application data in encrypted form.
+Packet 57 - Background traffic from Firefox.
+
+Everything is encrypyted unlike HTTP, it's all just unreadable blobs of data that doesn't make any sense at all. [POWER OF HTTPS!!!!]
+
+Security relevance:
+HTTP on public wifi - credentials, cookies, content - everything remains readable to anybody capturing traffic.
+HTTPS protects content, but SNI still leaks data. Use encrypted DNS to protect this.
+Background traffic reveals installed software useful for attacker fingerprinting.
+Attackers use Wireshark or tcpdump on compromsied machines to sniff credentials.
+
+
+
+
+
+ 
+
 
 
 
