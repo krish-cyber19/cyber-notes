@@ -1,3 +1,8 @@
+#NETWORKING PRACTICAL ON Kali Linux
+
+Hands-on networking investigation performed on a Kali Linux background running in Virtual Box.
+All commands are run on a host-only dual adapter setup + NAT.
+
 #ifconfig
 
 <img width="2786" height="1143" alt="image" src="https://github.com/user-attachments/assets/bf8f7648-501e-4861-bc9b-293d1b5ee256" />
