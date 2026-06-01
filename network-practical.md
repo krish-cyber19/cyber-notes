@@ -69,7 +69,7 @@ Attackers always scan before exploiting, defenders scan to monitor patterns.
 
  This command returns the software version and automatically runs host recon scripts against the services to check their response.
  From this scan, it can be learnt that the target is a Windows system.
- The scan ran SMB2 exploit against the service and found that SMB scanning is required. This means that every SMB message is signed and verified.
+ The scan ran SMB2 script against the service and found that SMB scanning is required. This means that every SMB message is signed and verified.
  SMB relay and NTLM attacks can be prevented by this.
  The scan also ran a time exploit and returned the time of the system, which can be useful for attackers for Kerberos authentication.
  Attackers can also sync their tools with the system, on knowing the time.
@@ -89,7 +89,7 @@ Attackers always scan before exploiting, defenders scan to monitor patterns.
  Hop 2 to 30 - All blocked as traceroute packets get absorbed in a VirtualBox environment before it even reaches the real hops.
 
  Security relevance:
- Attackers use traceroute to map network topology during reconnaisance.
+ Attackers use traceroute to map network topology during reconnaissance.
  Organisations generally block ICMP responses to prevent infrastructure mapping.
  TCP traceroute uses TCP SYN on port 80, which is harder to block than ICMP.
 
@@ -121,7 +121,7 @@ Packet 15 - Client initiates TLS.
 Packet 18 - Server responds and agrees on TLS encryption settings, sends certificate.
 Packet 20 - Client confirms cipher suite, begins encryption.
 Packets 22-25 - All application data in encrypted form.
-Packet 57 - Background traffic from Firefox.
+Packet 57 - Firefox automatically connecting to firefox.settings.services.mozilla.com for updates
 
 Everything is encrypyted unlike HTTP, it's all just unreadable blobs of data that doesn't make any sense at all. [POWER OF HTTPS!!!!]
 
