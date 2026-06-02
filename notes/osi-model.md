@@ -2,12 +2,19 @@
 
 
 It is a conceptual framework model that breaks network communication into seven layers - Physical, Data Link, Network, Transport, Session, Presentation and Application.
+
+
 Every target attacks a specific layer.
+
+
 Knowing which layer = knowing what the attacker will do.
+
+
 
 #Layer 7 - Application layer 
 
 Humans interact with this layer directly.
+
 Not the application itself, but the protocols used to communicate the data over the network.
 Protocols:
 PORT 80 - HTTP - Unencrypted network traffic
